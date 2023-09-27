@@ -1,3 +1,6 @@
+import kotlin.random.Random
+import  java.util.*
+
 fun main(args: Array<String>) {
 
 //  Constant `Val` can not be mutated
@@ -62,4 +65,43 @@ fun main(args: Array<String>) {
         println("repeat $r")
         r += 1
     }
+
+    val day = randomDayOfWeek()
+    val food = randomFood(day)
+    println("on $day I eat $food")
+//    Closures
+    println("operation of ${operateAValue(3, ::incrementPlusOne)}")
+    val inlineOperation:(Int) -> Int = { value -> value * 2 }
+    println("operation of ${operateAValue(3, inlineOperation)}")
+    println("operation of ${operateAValue(3, {value -> value * 3 })}")
 }
+
+//    using functions
+fun randomDayOfWeek() : String {
+    val daysOfWeek = arrayOf("Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Satuday",
+        "Sunday")
+    return daysOfWeek[java.util.Random().nextInt(daysOfWeek.size)]
+}
+fun randomFood(day: String): String {
+    return when(day) {
+        "Monday" -> "flakes"
+        "Tuesday" -> "meat"
+        "Wednesday" -> "rice"
+        "Thursday" -> "soup"
+        "Friday" -> "potatoes"
+        "Satuday" -> "chicken"
+        "Sunday" -> "cookies"
+        else -> "Nothing"
+    }
+}
+
+// this is a closure definition () -> Void when you pass a func as an argment
+fun operateAValue(value: Int, ops: (Int) -> Int) : Int {
+    return ops(value)
+}
+fun incrementPlusOne(value: Int) = value + 1
