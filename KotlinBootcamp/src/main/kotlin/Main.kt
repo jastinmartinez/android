@@ -116,8 +116,17 @@ class Aquarium {
 }
 
 // constructor
-class Food(val meal: String) {
+class Food(val meal: String = "") {
+    //    `constructor` keyword use to overload init
+    constructor(numberOfFish: Int) : this() {
+        val tank = numberOfFish * 2000 * 1.1
+    }
+
     fun printParameter() {
         println("type of ${meal}")
     }
+
+
+
 }
+
