@@ -76,6 +76,14 @@ fun main(args: Array<String>) {
     val inlineOperation:(Int) -> Int = { value -> value * 2 }
     println("operation of ${operateAValue(3, inlineOperation)}")
     println("operation of ${operateAValue(3, {value -> value * 3 })}")
+
+//    using classes
+//    using constructor
+    val food1 = Food(numberOfFish = 1)
+//    using default constructor
+    val food2 = Food(meal = "eggs")
+//    using factory fuction
+    val food3 = Food.lunch("meat")
 }
 
 //    using functions
@@ -125,7 +133,7 @@ class Food(val meal: String = "") {
 
 //    Kotlin coding style prefer to use factory func before using construct overload
 companion object {
-    fun launch(food: String) = Food(meal = food)
+    fun lunch(food: String) = Food(meal = food)
 }
     fun printParameter() {
         println("type of ${meal}")
