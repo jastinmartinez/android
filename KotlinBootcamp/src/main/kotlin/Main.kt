@@ -67,6 +67,7 @@ fun main(args: Array<String>) {
         r += 1
     }
 
+//    using functions
     val day = randomDayOfWeek()
     val food = randomFood(day)
     println("on $day I eat $food")
