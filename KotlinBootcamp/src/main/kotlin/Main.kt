@@ -145,4 +145,6 @@ companion object {
         println("type of ${meal}")
     }
 }
-
+// by default classes don't allow inheritance you must include `open` keyword at class and prop level if you want to override
+open class Lunch(open var food: String = "Bread") { }
+class LateLunch(override var food: String) : Lunch(food = food) { }
