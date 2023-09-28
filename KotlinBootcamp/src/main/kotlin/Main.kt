@@ -1,5 +1,6 @@
 import kotlin.random.Random
 import  java.util.*
+import kotlin.reflect.typeOf
 
 fun main(args: Array<String>) {
 
@@ -105,3 +106,18 @@ fun operateAValue(value: Int, ops: (Int) -> Int) : Int {
     return ops(value)
 }
 fun incrementPlusOne(value: Int) = value + 1
+
+// for class declaration we use `Class` keyword
+
+class Aquarium {
+    var width: Int = 10
+    var height: Int = 40
+    var length: Int = 100
+}
+
+// constructor
+class Food(val meal: String) {
+    fun printParameter() {
+        println("type of ${meal}")
+    }
+}
