@@ -148,3 +148,24 @@ companion object {
 // by default classes don't allow inheritance you must include `open` keyword at class and prop level if you want to override
 open class Lunch(open var food: String = "Bread") { }
 class LateLunch(override var food: String) : Lunch(food = food) { }
+
+//struct
+data class ExampleForData(val prop: Int) { }
+
+// Interface
+
+interface  ExampleInterface {
+    fun setPorp()
+}
+
+// abstract class
+
+abstract class ExampleAbstract {
+     abstract fun setProp()
+}
+
+//enum
+
+enum class Demo(val something: Int) {
+    NORTH(1), WEST(2), SOUTH(3), EAST(4)
+}
