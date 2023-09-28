@@ -122,11 +122,12 @@ class Food(val meal: String = "") {
         val tank = numberOfFish * 2000 * 1.1
     }
 
+//    Kotlin coding style prefer to use factory func before using construct overload
+companion object {
+    fun launch(food: String) = Food(meal = food)
+}
     fun printParameter() {
         println("type of ${meal}")
     }
-
-
-
 }
 
