@@ -122,6 +122,12 @@ class Aquarium {
     var width: Int = 10
     var height: Int = 40
     var length: Int = 100
+//    property getter
+var volume: Int
+    get() { return width * height * length / 1000 }
+    set(value) {
+        height = (value) * 1000 / (width * length)
+    }
 }
 
 // constructor
